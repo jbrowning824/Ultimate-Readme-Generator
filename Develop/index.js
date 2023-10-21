@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 
 const inquirer = require("inquirer");
+const axios = require('axios');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -65,9 +66,17 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
+    /*inquirer.prompt(questions)
         .then((answers) => {
             console.log(answers);
+        });
+        */
+    axios.get('/api/license', { params: { name: 'MIT' } })
+        .then((response) => {
+            console.log('GET /api/license', response.data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
         });
 }
 
