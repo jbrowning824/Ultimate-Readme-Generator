@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+const licenses = require('./services/models/licenses');
 const inquirer = require("inquirer");
 const axios = require('axios');
 const mock = require('../Develop/services/mock');
@@ -13,6 +14,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function init() {
     
+    console.log(licenses.map(l => l.license));
     var questions = await axios.get('api/questions')
         .then((response) => {
             return response.data;
