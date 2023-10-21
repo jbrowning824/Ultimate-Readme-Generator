@@ -1,7 +1,4 @@
 const licenses = require('./licenses');
-const axios = require('axios');
-const mock = require('../mock');
-
 
 const questions = [
     {
