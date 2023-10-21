@@ -1,7 +1,7 @@
-const licenses = require('./licenses');
+const licenses = require('./models/licenses');
+const questions = require('./models/questions');
 const axios = require('axios');
 const MockAdapter = require('axios-mock-adapter');
-
 
 const mock = new MockAdapter(axios);
 
@@ -13,8 +13,11 @@ mock
 
         license = licenses.find(license => license.name === name);
         return [200,JSON.stringify(license)];
-        
     }
     );
-
+mock
+    .onGet('api/questions')
+    .reply(() => { 
+        return[200, questions]});
+    
 module.exports = mock;
