@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
-
 const inquirer = require("inquirer");
 const axios = require('axios');
+const mock = require('../Develop/services/mock');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -71,7 +71,7 @@ function init() {
             console.log(answers);
         });
         */
-    axios.get('/api/license', { params: { name: 'MIT' } })
+    axios.get('/api/license', { params: { name: 'GNU' } })
         .then((response) => {
             console.log('GET /api/license', response.data);
         })

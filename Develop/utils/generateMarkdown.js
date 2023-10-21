@@ -1,4 +1,4 @@
-axios = require('axios');
+
 
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
@@ -10,13 +10,7 @@ choices = ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License
                     'Mozilla Public License 2.0', 'The Unlicense']
 
 function renderLicenseBadge(license) {
-  axios.get('/api/license', { params: { name: 'MIT' } })
-  .then((response) => {
-    console.log('GET /api/license', response.data);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+
   
 }
 
