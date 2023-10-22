@@ -1,5 +1,8 @@
+//needed to create list of license choices
 const licenses = require('./licenses');
 
+//list of questions used for user input
+//used as data for mocking api calls
 const questions = [
     {
         type: 'input',
@@ -35,6 +38,9 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Select a license',
+        //Get list of license choices from the license object in licenses.js
+        //the below will create a new array of just the full license name
+        // for the user to choose from.
         choices: licenses.map(l => l.license),
         default: 'None',
     },
@@ -50,4 +56,5 @@ const questions = [
     }
 ];
 
+//export the questions array to be used in other files
 module.exports = questions;

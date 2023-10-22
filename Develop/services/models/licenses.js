@@ -1,3 +1,4 @@
+//used as a data for mocking api calls
 const licenses = [{
     name: 'mit',
     license: 'MIT License',
@@ -88,4 +89,5 @@ const licenses = [{
 }
 ];
 
+//used to export the license array
 module.exports = licenses;
