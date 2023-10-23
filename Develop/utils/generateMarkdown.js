@@ -3,13 +3,13 @@ const ApiClient = require('../services/api-service');
 const mock = require('../services/mock');
 
 //set variables
-const httpOptions ={
-  headers: {
-      Authorization: 'Bearer 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',
-      'X-GitHub-Api-Version': '2022-11-28',
-  }
-}
-const baseURL = 'https://api.github.com/licenses';
+// const httpOptions ={
+//   headers: {
+//       Authorization: 'Bearer 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',
+//       'X-GitHub-Api-Version': '2022-11-28',
+//   }
+// }
+// const baseURL = 'https://api.github.com/licenses';
 
 function isNotLicensed(name){
   return name === 'none' ? true : false;
@@ -44,6 +44,8 @@ async function renderLicenseSection(license) {
   } catch (error) {
     console.error('Error:', error);
   }
+
+  apiClient.fetchCommonLicenses();
 }
 
 // TODO: Create a function to generate markdown for README

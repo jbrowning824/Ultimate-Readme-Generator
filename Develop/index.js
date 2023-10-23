@@ -40,18 +40,20 @@ async function init() {
     // .catch((error) => {
     //   console.error('Error:', error);
     // });
-
-    
     generateMarkdown({name: 'mit'})
+    // inquirer.prompt(questions)
+    //     .then((answers) => {
+    //         console.log(answers);
+            
+    //     });
+    
+    
 
     // TODO: Possible create a service to pass questions to inquirer 
     // would be helpful if there is ever multiple question sets that are needed
     // would also allow for greater extensibility to the application
     
-    // inquirer.prompt(questions)
-    // .then((answers) => {
-    //     console.log(answers);
-    // });
+ 
 }
 
 // Function call to initialize app
